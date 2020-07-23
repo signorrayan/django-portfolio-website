@@ -1,0 +1,8 @@
+
+
+    <h1>{{ post.title }}</h1></a>
+    <h6>Posted in {{ post.date|date:'d M Y' }}</h6>
+    <p>{{ post.body }}</p>
+    {% if post.image %}
+        <img src="{{ post.image.url }}" height="250" width="350">
+    {% endif %}

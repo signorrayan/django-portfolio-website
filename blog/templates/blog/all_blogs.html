@@ -1,0 +1,17 @@
+
+    <br>
+        <br>
+            <br>
+            <h2>Mohahammadreza has written {{ posts.count }} posts.</h2>
+            {% for post in posts %}
+                <a href="{% url 'blog:detail' post.id %}" <h2>{{ post.title }}</h2></a>
+                <h6>Posted in {{ post.date|date:'d M Y' }}</h6>
+                <p>{{ post.body|striptags}}</p>
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" height="250" width="350">
+                {% endif %}
+            {% endfor %}
+            <br>
+        <br>
+    <br>
+
